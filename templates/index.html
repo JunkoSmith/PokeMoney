@@ -1,20 +1,18 @@
-{% extends "bootstrap/base.html" %}
+{% extends "base.html" %}
 {% block title %}Top page{% endblock %}
 
 {% block content %}
-<div class="container">
-  <a href="/logout" role="button">logout</a>
-  <h1>My pocket money records</h1>
-  <a href="/create" role="button">Create</a>
-    {% for post in posts %}
-      <article>
-        <h2>{{post.title}}</h2>
-        <a href="/{{post.id}}/update" role="button">Update</a>
-        <a href="/{{post.id}}/delete" role="button">Delete</a>
-        <p>£ </p>
-        <p>Date of added:{{post.created_at}}</p>
-        <p>Note: {{post.body}}</p>
-      </article>
-    {% endfor%}
-</div>
+  <div class="box">
+    <h1>PokeMoney Go!</h1>
+    
+    <p>Create your account now!</p>
+    <div class="button">
+      <a href="/signup" role="button">Signup Now</a>
+    </div>
+  
+    <p>Already have an account?</p>  
+    <div class="button">
+      <a href="/login" role="button">Login</a>
+    </div>
+  </div>
 {% endblock %}

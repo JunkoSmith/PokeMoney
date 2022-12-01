@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_login import UserMixin, LoginManager, login_user, logout_user, login_required
@@ -30,15 +30,18 @@ class Post(db.Model):
 class User(UserMixin, db.Model):
   id = db.Column(db.Integer, primary_key=True)
   username = db.Column(db.String(50), nullable=False, unique=True)
-  password = db.Column(db.String(12), nullable=False)
+  password = db.Column(db.String(25), )
     
 @login_manager.user_loader
 def load_uder(user_id):
     return User.query.get(int(user_id))
 
 
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    return render_template('index.html')
 
-@app.route('/', methods=['GET', 'POST']) #signup change to "/"
+@app.route('/signup', methods=['GET', 'POST']) #signup change to "/"
 def signup():
     if request.method == "POST":
       username = request.form.get('username')
@@ -48,9 +51,11 @@ def signup():
 
       db.session.add(user)
       db.session.commit()
-      return redirect('/login')
+      return redirect(url_for("login"))
+
     else:
       return render_template('signup.html')
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -61,23 +66,26 @@ def login():
       user = User.query.filter_by(username=username).first()
       if check_password_hash(user.password, password):
         login_user(user)
-        return redirect('index')
+        return redirect(url_for("record"))
+      
     else:
       return render_template('login.html')
-      # add "if" the username doesn't mach
+      #add "if" the username doesn't mach
 
-@app.route('/index', methods=['GET', 'POST']) #get=access to the web page
+
+@app.route('/record', methods=['GET', 'POST']) #get=access to the web page
 @login_required
-def index():
+def record():
     if request.method == 'GET':
       posts = Post.query.all()
-      return render_template('index.html', posts=posts)
+      return render_template('record.html', posts=posts)
 
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
-    return redirect('/login')
+    return redirect(url_for("login"))
+
 
 @app.route('/create', methods=['GET', 'POST'])
 @login_required
@@ -90,10 +98,11 @@ def create():
 
       db.session.add(post)
       db.session.commit()
-      return redirect('index')
+      return redirect(url_for("record"))
 
     else:
       return render_template('create.html')
+
 
 @app.route('/<int:id>/update', methods=['GET', 'POST'])
 @login_required
@@ -105,7 +114,8 @@ def update(id):
       post.title = request.form.get('title')
       post.body = request.form.get('body')
       db.session.commit()
-      return redirect('index')
+      return redirect(url_for("record"))
+
 
 @app.route('/<int:id>/delete', methods=['GET'])
 @login_required
@@ -114,8 +124,10 @@ def delete(id):
 
     db.session.delete(post)
     db.session.commit()
-    return redirect('index')
+    return redirect(url_for("record"))
 
+    
 
 with app.app_context():
     db.create_all()
+

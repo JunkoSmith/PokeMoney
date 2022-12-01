@@ -1,3 +1,298 @@
-h1 {
-  color: blue;
+/* GENERAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+ 
+input {
+  /*-webkit-appearance: none;*/
+  border: none;
+  border-radius: 0;
+  outline: none;
+} 
+
+/* FONT AVENIR */
+@font-face {
+  font-family: 'Avenir';
+  src: url(font/AvenirLTStd-Book.otf);
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url(font/AvenirLTStd-Roman.otf);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url(font/AvenirLTStd-Black.otf);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/*body {
+  background-color: #dad870;
+   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Avenir';
+  font-weight: 400;
+  letter-spacing: 0.08em; 
+}*/
+
+p {
+  line-height: 1.7;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h3,
+h5
+ {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem; /*32px*/
+}
+
+h3 {
+  font-size: 1.375rem; /*22px*/
+  margin: 0 1rem;
+}
+
+h5 {
+  font-size: 1.125rem; /*18px*/
+  text-align: center;
+  margin: 0 1rem 0.5rem 2rem;
+  letter-spacing: 0.03em;
+}
+
+h2,
+h4,
+h6 {
+  font-family: 'Avenir', Helvetica, sans-serif;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem 0;
+}
+
+h2 {
+  font-size: 1.75rem; /*28px*/
+}
+
+h4 {
+  font-size: 1.25rem; /*20px*/
+}
+
+h6 {
+  font-size: 1rem; /*16px*/
+}
+/* Base-Header start here --------------*/
+.header-section1 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem;
+  padding: 3rem 1rem;
+}
+/* Base-Header end here --------------*/
+
+/* Base-Main start here */
+.base-main {
+  background-color:#dad870;
+  height: 100%;
+  max-width: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 1rem;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+/* Base-Main end here --------------*/
+
+/* Base-FOOTER start -----------------------------------------*/
+.page-footer {
+  background-color: #353535;
+  height: 500px;
+  display: flex;
+  justify-content: flex-end;
+  text-align: end;
+  margin: 1rem;
+  padding: 3rem 1rem;
+}
+
+ .copyright {
+  border-top: 1px solid #ffffff;
+}
+
+.column-3 ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.column-3 a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-column a,
+.footer-column p {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-column h3,
+.footer-copyright {
+  color: #dad870;
+  font-size: 18px;
+}
+/* Base-Footer end here --------------*/
+
+/* Page-Index start here */
+.button {
+  background-color:#353535;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  margin: 1rem 0;
+}
+
+.button a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0 4rem;
+}
+
+.button input {
+  background-color:#353535;
+  color: #ffffff;
+  padding: 0 4rem;
+
+
+}
+/* Page-Index end here --------------*/
+
+/* Page-Index start here */
+
+
+
+/* .box {
+  display: block;
+  justify-content: center;
+  margin: 5rem auto;
+
+  text-align: center;
+  background-color:#dad870;
+  padding: 4rem;
+  border-radius: 0.6rem;
+  max-width: 30rem; 
+}*/
+
+/*  */
+
+/*
+.column-1 {
+  order: 3;
+  margin: 1rem 0 2rem 0;
+}
+
+.column-2 {
+  margin-bottom: 2rem;
+} */
+
+/* .column-1 p,
+.column-2 p {
+  margin: 0;
+}
+ul .colum-left {
+  padding-left: 0rem;
+}
+
+.column-3 li {
+  display: inline-flex;
+  padding-left: 1.5rem;
+  font-size: 2rem;
+}
+
+.fa-facebook,
+.fa-twitter,
+.fa-instagram {
+  -webkit-font-smoothing: antialiased;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+} */
+
+/* .footer-copyright {
+  font-style: italic;
+  text-align: center;
+  font-size: 1.125rem;
+  color: #dad870;
+  margin: 1rem 0;
+} */
+
+/* Tablet layout start --------------------------------*/
+@media only screen 
+and (min-width: 511px) 
+and (max-width: 960px) {
+  /* .product-menu {
+    display: flex;
+    overflow-x: unset;
+  }
+
+  .product-menu>div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .product-list {
+    margin: 0.5rem 1rem 1rem 1rem;
+  }
+  .product-card {
+    width: 30%;
+  }*/
+} 
+
+/* Desktop layout start -------------------------------*/
+@media only screen and (min-width: 961px) {
+
+  /* FOOTER */
+  /* .footer-column-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: start;
+    }
+
+    .footer-column-container a:hover {
+      color: #dad870;
+    }
+
+    .column-1 {
+    text-align: end;
+    }
+
+    .column-1,
+    .column-2 {
+      margin-bottom: 0;
+      width: 25%;
+    } */
+}
+/* FOOTER end -----------------------------------------*/

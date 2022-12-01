@@ -1,16 +1,29 @@
 {% extends "base.html" %}
+{% block title %}Signup Page{% endblock %}
 
 {% block content %}
-<h1>Create a New Account</h1>
+  <main class="form-signin w-100 m-auto">
+    <h1>Create a<br>New Account</h1>
+      <form action="" method="POST">
 
-  <form action="" method="POST">
-    <label for="username">Username</label>
-    <input type="text" name="username">
+        <div class="form-floating">
+          <input type="text" class="form-control" name="username" id="floatingPassword" placeholder="username" >
+          <label for="username">Username</label>
+        </div>
 
-    <label for="password">Password</label>
-    <input type="password" name="password" id="">
-    
-    <input type="submit" value="Join">
-  </form>
-  
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+          <label for="password">Password</label>
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Join">
+        </div>
+
+        <div class="button">
+          <a href="/">Back</a>
+        </div>
+
+      </form>
+  </main>
 {% endblock %}

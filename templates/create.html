@@ -1,16 +1,24 @@
 {% extends "base.html" %}
+{% block title %}Top page{% endblock %}
 
 {% block content %}
-<h1>Create a new record</h1>
 
-  <form action="" method="POST">
-    <label for="title">Title</label>
-    <input type="text" name="title">
+  <main>
+    <div>
+      <a href="/logout" role="button">logout</a>
+      <h1>My pocket money records</h1>
+      <a href="/create" role="button">Create</a>
+        {% for post in posts %}
+          <article>
+            <h2>{{post.title}}</h2>
+            <a href="/{{post.id}}/update" role="button">Update</a>
+            <a href="/{{post.id}}/delete" role="button">Delete</a>
+            <p>£ </p>
+            <p>Date of added:{{post.created_at}}</p>
+            <p>Note: {{post.body}}</p>
+          </article>
+        {% endfor%}
+    </div>
+  </main> 
 
-    <label for="boby">Discripthion</label>
-    <input type="text" name="body" id="">
-    
-    <input type="submit" value="Add">
-  </form>
-  
 {% endblock %}
