@@ -1,21 +1,67 @@
-{% extends "base.html" %}
-{% block title %}Top page{% endblock %}
+{% extends "record.html" %}
+{% block title %}List of records{% endblock %}
+
+{% block subtitle %}
+  <nav class="navbar navbar-expand-lg" role="navigation" style="background-color: #ff5c4d;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: #fff;">PokeMoney</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color: #dad870; background-color: #f8f9fa; border: var(--bs-border-width) solid #636464;">
+        <span class="navbar-toggler-icon" ></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="true" href="/record">Add Record</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/create">List of Record</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/1/update">Change Record</a>
+          </li>
+          <li class="nav-item">
+            <a a class="nav-link" href="/login">logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="header-box">
+    <h3>In this page,</h3>
+    <h3>You can check the all records of your pocket money! </h3>
+  </div>
+{% endblock %}
 
 {% block content %}
 
   <main>
     <div>
-      <a href="/logout" role="button">logout</a>
       <h1>My pocket money records</h1>
-      <a href="/create" role="button">Create</a>
+      <div class="button2">
+        <a href="/record" role="button">Add new record</a>
+      </div>
+        <h3>Total: </h3>
         {% for post in posts %}
           <article>
-            <h2>{{post.title}}</h2>
-            <a href="/{{post.id}}/update" role="button">Update</a>
-            <a href="/{{post.id}}/delete" role="button">Delete</a>
-            <p>£ </p>
-            <p>Date of added:{{post.created_at}}</p>
-            <p>Note: {{post.body}}</p>
+            <div class="article-box">
+              <p>Amount:</p>
+              <h2>£ {{post.title}}</h2>
+            </div>
+            <div>
+              <p>Note:</p>
+              <p>{{post.body}}</p>
+            </div>
+            <div>
+              <p>Saved at:{{post.created_at}}</p>
+            </div>
+            <div class="button1">
+              <a href="/{{post.id}}/update" role="button">Update</a>
+            </div>
+            <div class="button">
+              <a href="/{{post.id}}/delete" role="button">Delete</a>
+            </div>
+
+
           </article>
         {% endfor%}
     </div>

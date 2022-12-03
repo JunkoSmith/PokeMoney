@@ -38,19 +38,9 @@ input {
   font-weight: 700;
 }
 
-/*body {
-  background-color: #dad870;
-   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Avenir';
-  font-weight: 400;
-  letter-spacing: 0.08em; 
-}*/
-
 p {
   line-height: 1.7;
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   letter-spacing: 0.08em;
 }
 
@@ -101,14 +91,11 @@ h4 {
 h6 {
   font-size: 1rem; /*16px*/
 }
+
 /* Base-Header start here --------------*/
-.header-section1 {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+.header-box {
   margin: 1rem;
-  padding: 3rem 1rem;
+  padding: 1rem;
 }
 /* Base-Header end here --------------*/
 
@@ -121,7 +108,6 @@ h6 {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  margin: 1rem;
   padding: 3rem 1rem;
   text-align: center;
 }
@@ -130,12 +116,10 @@ h6 {
 /* Base-FOOTER start -----------------------------------------*/
 .page-footer {
   background-color: #353535;
-  height: 500px;
   display: flex;
   justify-content: flex-end;
   text-align: end;
-  margin: 1rem;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
 }
 
  .copyright {
@@ -167,85 +151,123 @@ h6 {
 /* Base-Footer end here --------------*/
 
 /* Page-Index start here */
-.button {
+.button,
+.button1, /* orange*/
+.button2 {
   background-color:#353535;
   padding: 0.6rem;
   border-radius: 0.6rem;
-  margin: 1rem 0;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  width: 200px;
+}
+
+.button1 {
+  background-color: #ff5c4d;
+  margin-top: 1rem;
 }
 
 .button a {
   color: #ffffff;
   text-decoration: none;
-  padding: 0 4rem;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: center;
 }
 
+.button1 a,
+.button2 a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+}
+.button1 input{
+  background-color: #ff5c4d;
+  color: #fff;
+  padding: 0 4rem;
+
+}
 .button input {
   background-color:#353535;
   color: #ffffff;
   padding: 0 4rem;
+}
 
-
+.button-login input {
+  background-color: aliceblue;
 }
 /* Page-Index end here --------------*/
 
-/* Page-Index start here */
-
-
-
-/* .box {
-  display: block;
-  justify-content: center;
-  margin: 5rem auto;
-
-  text-align: center;
-  background-color:#dad870;
-  padding: 4rem;
-  border-radius: 0.6rem;
-  max-width: 30rem; 
-}*/
-
-/*  */
-
-/*
-.column-1 {
-  order: 3;
-  margin: 1rem 0 2rem 0;
+/* Page-Record start here */
+.button-logout a {
+  text-decoration: none;
+  color: #353535;
+  background-color: aqua;
+  padding: 1rem;
 }
 
-.column-2 {
-  margin-bottom: 2rem;
-} */
-
-/* .column-1 p,
-.column-2 p {
-  margin: 0;
-}
-ul .colum-left {
-  padding-left: 0rem;
+.tooltip1{
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  text-align: start;
+  margin: 0.6rem;
 }
 
-.column-3 li {
-  display: inline-flex;
-  padding-left: 1.5rem;
-  font-size: 2rem;
+.tooltip1 i{
+  margin:0;
+  padding:0;
 }
 
-.fa-facebook,
-.fa-twitter,
-.fa-instagram {
-  -webkit-font-smoothing: antialiased;
-  font-size: 2rem;
+.description1 {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.3rem;
+  color: #fff;
+  border-radius: 5px;
+  background: #353535;
+  width: 200px;
+}
+
+.description1:before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -5%;
+  border: 15px solid transparent;
+  border-top: 15px solid #353535;
+  margin-left: -15px;
+  transform: rotateZ(90deg);
+}
+
+.tooltip1:hover .description1{
+  display: inline-block;
+  z-index: 10;
+  top: -10px;
+  left: 30px;
+}
+/* Page-Record end here --------------*/
+
+/* Page-Create start here */
+article {
+  background-color: rgba(255, 255, 255, 0.523);
+  text-align: start;
+  padding: 1rem;
   margin-bottom: 1rem;
-} */
+}
+/* Page-Create end here --------------*/
 
-/* .footer-copyright {
-  font-style: italic;
-  text-align: center;
-  font-size: 1.125rem;
-  color: #dad870;
-  margin: 1rem 0;
-} */
+/* Page-update start here */
+.update-container {
+  display: flex;
+  flex-direction: column;
+}
+/* Page-update end here --------------*/
+
 
 /* Tablet layout start --------------------------------*/
 @media only screen 
@@ -272,9 +294,11 @@ and (max-width: 960px) {
 
 /* Desktop layout start -------------------------------*/
 @media only screen and (min-width: 961px) {
+  /* Tool thips */
 
+  
   /* FOOTER */
-  /* .footer-column-container {
+  .footer-column-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -293,6 +317,6 @@ and (max-width: 960px) {
     .column-2 {
       margin-bottom: 0;
       width: 25%;
-    } */
+    }
 }
 /* FOOTER end -----------------------------------------*/

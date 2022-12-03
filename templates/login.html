@@ -1,7 +1,16 @@
 {% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+
+{% block subtitle %}
+  <div class="header-box">
+    <h3>Did you already create your account?</h3>
+    <h3>If so, you can log in here!</h3>
+  </div>
+{% endblock %}
 
 {% block content %}
-  <main class="form-signin w-100 m-auto">
+  <div class="form-signin" style="width: 20rem;">
     <h1>Please Login</h1>
       <form action="" method="POST">
 
@@ -15,7 +24,7 @@
           <label for="floatingPassword">Password</label>
         </div>
 
-        <div class="button">
+        <div class="button1">
           <input type="submit" value="Login">
         </div>
           
@@ -24,5 +33,5 @@
         </div>
       
       </form>
-  </main>
+  </div>
 {% endblock %}

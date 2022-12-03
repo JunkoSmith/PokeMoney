@@ -1,25 +1,63 @@
 {% extends "base.html" %}
 {% block title %}Record{% endblock %}
 
-{% block content %}
-<div>
-  <h1>Create a new record</h1>
-
-  <form action="" method="POST" class="input-group mb-3">
-    <div>
-      <span class="input-group-text">$</span>
-      <span class="input-group-text">0.00</span>
-      <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+{% block subtitle %}
+  <nav class="navbar navbar-expand-lg" role="navigation" style="background-color: #ff5c4d;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: #fff;">PokeMoney</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color: #dad870; background-color: #f8f9fa; border: var(--bs-border-width) solid #636464;">
+        <span class="navbar-toggler-icon" ></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="true" href="/record">Add Record</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/create">List of Record</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/1/update">Change Record</a>
+          </li>
+          <li class="nav-item">
+            <a a class="nav-link" href="/login">logout</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+  <div class="header-box">
+    <h3>In this page,</h3>
+    <h3>You can input the amount of your pocket money to add on! </h3>
+  </div>
+{% endblock %}
 
-    <label for="title">Title</label>
-    <input type="text" name="title">
+{% block content %}
+  <div>
+    <h1>Add your pocket money</h1>
 
-    <label for="boby">Discripthion</label>
-    <input type="text" name="body" id="">
-    
-    <input type="submit" value="Add">
-  </form>
-</div>  
+    <form action="" method="POST" >
+      <div>
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInputValue" placeholder="e.g. £1 £2 £5 £10" name="title"><!-- get title -->
+          <label for="floatingInputValue">Input the number of amount you got</label>
+        </div>
+  
+        <div class="tooltip1">
+          <i class="fa fa-info" aria-hidden="true"></i>
+          <div class="description1">*For Example: £1 => 1, £5 => 5</div>
+        </div>
+  
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" type="text" name="body"></textarea><!-- get body -->
+          <label for="floatingTextarea2">Discripthion</label>
+        </div>
+      </div>
 
+      <div class="button1">
+        <input type="submit" value="Save">
+      </div>
+
+    </form>
+  </div>  
 {% endblock %}

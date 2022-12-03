@@ -1,8 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Signup Page{% endblock %}
+{% block title %}Signup{% endblock %}
+
+{% block subtitle %}
+  <div class="header-box">
+    <h3>Did you want to Join us?</h3>
+    <h3>Please create your account here!</h3>
+  </div>
+{% endblock %}
 
 {% block content %}
-  <main class="form-signin w-100 m-auto">
+  <main class="form-signin" style="width: 20rem;">
     <h1>Create a<br>New Account</h1>
       <form action="" method="POST">
 
@@ -16,7 +23,7 @@
           <label for="password">Password</label>
         </div>
         
-        <div class="button">
+        <div class="button1">
           <input type="submit" value="Join">
         </div>
 
