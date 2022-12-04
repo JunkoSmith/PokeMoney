@@ -1,31 +1,74 @@
 {% extends "base.html" %}
 {% block title %}Update{% endblock %}
 
+{% block header %}
+  <nav class="navbar navbar-expand-lg" role="navigation" style="background-color: #ff5c4d;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: #fff;">PokeMoney</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color: #dad870; background-color: #f8f9fa; border: var(--bs-border-width) solid #636464;">
+        <span class="navbar-toggler-icon" ></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="true" href="/record">Add Record</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/create">List of Record</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/1/update">Change Record</a>
+          </li>
+          <li class="nav-item">
+            <a a class="nav-link" href="/login">logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="header-box">
+    <h3>In this page,</h3>
+    <h3>You can check the all records of your pocket money! </h3>
+  </div>
+{% endblock %}
+
 
 {% block content %}
-<div>
-  <h1>Rewrite your record</h1>
+  <div class="homepage">
+    <main class="form-signin" style="width: 20rem;">
 
-  <form action="" method="POST">
-    <div class="update-container">
-      <div class="form-floating">
-        <input type="text" name="title" value="{{post.title}}" class="form-control">
-        <label for="title">Change the amount?</label>
-      </div>
-      <div class="form-floating">
-        <input type="text" name="body" id="" value="{{post.body}}" class="form-control">
-        <label for="boby">Change Discripthion?</label>
-      </div>
-    </div>
+    <h1>Edit your record</h1>
 
-    <div class="button1">
-      <input type="submit" value="Change">
-    </div> 
+      <form action="" method="POST">
+        <div class="form-container">
+          <div class="form-floating">
+            <input type="text" name="title" value="{{post.title}}" class="form-control">
+            <label for="title">Change the amount?</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" name="body" id="" value="{{post.body}}" class="form-control">
+            <label for="boby">Change Discripthion?</label>
+          </div>
+        </div>
 
-    <div class="button">
-      <a href="/create">Back</a>
-    </div>
+        <div>
+          <p>Saved at:{{post.created_at}}</p>
+        </div>
 
-  </form>
-</div>
+        <div class="button-btn">
+          <input class="button3" type="submit" value="Change">
+        </div> 
+
+        <div class="button-btn">
+          <a class="button1" href="/create">Back</a>
+        </div>
+
+      </form>
+    </main>
+  </div>
+{% endblock %}
+{% block footer %}
+  <div class="draw-3">
+    <img src="../static/images/Olivia_draw05.png" alt="">
+  </div>
 {% endblock %}

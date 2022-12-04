@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Top page{% endblock %}
 
-{% block subtitle %}
+{% block header %}
   <div class="header-box">
     <h3>Hl! </h3>
     <h3>This app will provide you to get manage how to record your pokket money. </h3>
@@ -10,17 +10,26 @@
 {% endblock %}
 
 {% block content %}
-  <div>
+  <div class="homepage">
+
     <h1>PokeMoney Go!</h1>
     
     <p>Create your account now!</p>
-    <div class="button">
-      <a href="/signup" role="button">Signup Now</a>
+    <div class="button-btn">
+      <a class="button" href="/signup" role="button">Signup Now</a>
     </div>
   
     <p>Already have an account?</p>  
-    <div class="button">
-      <a href="/login" role="button">Login</a>
+    <div class="button-btn">
+      <a class="button1" href="/login" role="button">Login</a>
     </div>
+    
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  <div class="draw" >
+    <img src="../static/images/Olivia_draw04.png" alt="">
   </div>
 {% endblock %}

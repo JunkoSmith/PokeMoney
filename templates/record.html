@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Record{% endblock %}
 
-{% block subtitle %}
+{% block header %}
   <nav class="navbar navbar-expand-lg" role="navigation" style="background-color: #ff5c4d;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" style="color: #fff;">PokeMoney</a>
@@ -33,31 +33,39 @@
 {% endblock %}
 
 {% block content %}
-  <div>
+  <div class="homepage">
+    <main class="form-signin" style="width: 20rem;">
+
     <h1>Add your pocket money</h1>
 
-    <form action="" method="POST" >
-      <div>
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInputValue" placeholder="e.g. £1 £2 £5 £10" name="title"><!-- get title -->
-          <label for="floatingInputValue">Input the number of amount you got</label>
+      <form action="" method="POST" >
+        <div class="form-container">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInputValue" placeholder="e.g. £1 £2 £5 £10" name="title"><!-- get title -->
+            <label for="floatingInputValue">Input the number of amount you got</label>
+          </div>
+                        
+          <div class="tooltip1">
+            <i class="fa fa-info" aria-hidden="true"></i>
+            <div class="description1">*For Example: £1 => 1, £5 => 5</div>
+          </div>
+    
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" type="text" name="body"></textarea><!-- get body -->
+            <label for="floatingTextarea2">Discripthion</label>
+          </div>
         </div>
-  
-        <div class="tooltip1">
-          <i class="fa fa-info" aria-hidden="true"></i>
-          <div class="description1">*For Example: £1 => 1, £5 => 5</div>
-        </div>
-  
-        <div class="form-floating">
-          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" type="text" name="body"></textarea><!-- get body -->
-          <label for="floatingTextarea2">Discripthion</label>
-        </div>
-      </div>
 
-      <div class="button1">
-        <input type="submit" value="Save">
-      </div>
+        <div class="button-btn">
+          <input class="button2" type="submit" value="Save">
+        </div>
+      </form>   
+    </main>
+  </div>   
+{% endblock %}
 
-    </form>
-  </div>  
+{% block footer %}
+  <div class="draw-2">
+    <img src="../static/images/Olivia_draw01.png" alt="">
+  </div>
 {% endblock %}

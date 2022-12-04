@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Signup{% endblock %}
 
-{% block subtitle %}
+{% block header %}
   <div class="header-box">
     <h3>Did you want to Join us?</h3>
     <h3>Please create your account here!</h3>
@@ -9,28 +9,39 @@
 {% endblock %}
 
 {% block content %}
-  <main class="form-signin" style="width: 20rem;">
-    <h1>Create a<br>New Account</h1>
-      <form action="" method="POST">
+  <div class="homepage">
+    <main class="form-signin" style="width: 20rem;">
+    
 
-        <div class="form-floating">
-          <input type="text" class="form-control" name="username" id="floatingPassword" placeholder="username" >
-          <label for="username">Username</label>
-        </div>
+      <h1>Create a<br>New Account</h1>
+        <form action="" method="POST">
 
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
-          <label for="password">Password</label>
-        </div>
-        
-        <div class="button1">
-          <input type="submit" value="Join">
-        </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" name="username" id="floatingPassword" placeholder="username" >
+            <label for="username">Username</label>
+          </div>
 
-        <div class="button">
-          <a href="/">Back</a>
-        </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+            <label for="password">Password</label>
+          </div>
+          
+          <div class="button-btn">
+            <input class="button2" type="submit" value="Join">
+          </div>
 
-      </form>
-  </main>
+          <div class="button-btn">
+            <a class="button1" href="/">Back</a>
+          </div>
+
+        </form>
+    
+    </main>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  <div class="draw-1">
+    <img src="../static/images/Olivia_draw03.png" alt="">
+  </div>
 {% endblock %}

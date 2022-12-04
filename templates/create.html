@@ -1,7 +1,7 @@
 {% extends "record.html" %}
 {% block title %}List of records{% endblock %}
 
-{% block subtitle %}
+{% block header %}
   <nav class="navbar navbar-expand-lg" role="navigation" style="background-color: #ff5c4d;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" style="color: #fff;">PokeMoney</a>
@@ -33,38 +33,36 @@
 {% endblock %}
 
 {% block content %}
-
-  <main>
-    <div>
-      <h1>My pocket money records</h1>
-      <div class="button2">
-        <a href="/record" role="button">Add new record</a>
-      </div>
-        <h3>Total: </h3>
-        {% for post in posts %}
-          <article>
-            <div class="article-box">
-              <p>Amount:</p>
-              <h2>£ {{post.title}}</h2>
-            </div>
-            <div>
-              <p>Note:</p>
-              <p>{{post.body}}</p>
-            </div>
-            <div>
-              <p>Saved at:{{post.created_at}}</p>
-            </div>
-            <div class="button1">
-              <a href="/{{post.id}}/update" role="button">Update</a>
-            </div>
-            <div class="button">
-              <a href="/{{post.id}}/delete" role="button">Delete</a>
-            </div>
-
-
-          </article>
-        {% endfor%}
+<div class="homepage">
+  <main class="form-signin" style="width: 20rem;">
+  <h1>My pocket money records</h1>
+    <div class="button-btn">
+      <a class="button" href="/record" role="button">Add new record</a>
     </div>
-  </main> 
 
+    <h3>Total: </h3>
+
+      {% for post in posts %}
+        <article>
+          <div class="article-box">
+            <p>Amount:</p>
+            <h2>£ {{post.title}}</h2>
+          </div>
+          <div>
+            <p>Note:</p>
+            <p>{{post.body}}</p>
+          </div>
+          <div>
+            <p>Saved at:{{post.created_at}}</p>
+          </div>
+          <div class="button-btn">
+            <a class="button3" href="/{{post.id}}/update" role="button">Change</a>
+          </div>
+          <div class="button-btn">
+            <a class="button1" href="/{{post.id}}/delete" role="button">Delete</a>
+          </div>
+        </article>
+      {% endfor%}
+  </main> 
+</div>
 {% endblock %}

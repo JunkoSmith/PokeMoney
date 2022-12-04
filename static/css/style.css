@@ -1,20 +1,8 @@
-/* GENERAL STYLES */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-html {
-  scroll-behavior: smooth;
-}
- 
-input {
-  /*-webkit-appearance: none;*/
-  border: none;
-  border-radius: 0;
-  outline: none;
-} 
 
 /* FONT AVENIR */
 @font-face {
@@ -44,44 +32,19 @@ p {
   letter-spacing: 0.08em;
 }
 
-ul {
-  list-style: none;
-}
-
-h1,
-h3,
-h5
- {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Avenir', sans-serif;
   font-weight: 700;
+  margin: 0 1rem
 }
 
-h1 {
-  font-size: 2rem; /*32px*/
+h2 {
+  font-size: 1.75rem; /*28px*/
 }
 
 h3 {
   font-size: 1.375rem; /*22px*/
   margin: 0 1rem;
-}
-
-h5 {
-  font-size: 1.125rem; /*18px*/
-  text-align: center;
-  margin: 0 1rem 0.5rem 2rem;
-  letter-spacing: 0.03em;
-}
-
-h2,
-h4,
-h6 {
-  font-family: 'Avenir', Helvetica, sans-serif;
-  font-weight: 700;
-  margin: 1rem 0 0.5rem 0;
-}
-
-h2 {
-  font-size: 1.75rem; /*28px*/
 }
 
 h4 {
@@ -91,38 +54,20 @@ h4 {
 h6 {
   font-size: 1rem; /*16px*/
 }
-
-/* Base-Header start here --------------*/
-.header-box {
-  margin: 1rem;
-  padding: 1rem;
-}
-/* Base-Header end here --------------*/
-
-/* Base-Main start here */
-.base-main {
-  background-color:#dad870;
-  height: 100%;
-  max-width: 30rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  padding: 3rem 1rem;
-  text-align: center;
-}
-/* Base-Main end here --------------*/
+/* .header-section1 {
+  margin: 3rem;
+} */
 
 /* Base-FOOTER start -----------------------------------------*/
 .page-footer {
   background-color: #353535;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   text-align: end;
   padding: 2rem 1rem;
 }
 
- .copyright {
+.copyright {
   border-top: 1px solid #ffffff;
 }
 
@@ -131,9 +76,9 @@ h6 {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.column-3 a {
+.column-3 li {
   color: #ffffff;
-  text-decoration: none;
+  list-style: none;
 }
 
 .footer-column a,
@@ -151,63 +96,87 @@ h6 {
 /* Base-Footer end here --------------*/
 
 /* Page-Index start here */
-.button,
-.button1, /* orange*/
-.button2 {
-  background-color:#353535;
-  padding: 0.6rem;
+.base-main {
+  margin-top: 3rem;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 4rem 0;
+  background-color: #dad870;
+}
+
+.button-btn {
+  margin-bottom: 1rem;
+}
+
+.button-btn a {
+  text-decoration: none;
+}
+
+.button {
+  background-color: #353535;
+  color: #fff;
+  padding: 0.6rem 3.4rem;
   border-radius: 0.6rem;
   margin: 0 auto;
   margin-bottom: 1rem;
-  width: 200px;
 }
-
 .button1 {
-  background-color: #ff5c4d;
-  margin-top: 1rem;
-}
-
-.button a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 0 2.5rem;
-  display: flex;
-  justify-content: center;
-}
-
-.button1 a,
-.button2 a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: center;
-}
-.button1 input{
-  background-color: #ff5c4d;
+  background-color: #353535;
   color: #fff;
-  padding: 0 4rem;
-
-}
-.button input {
-  background-color:#353535;
-  color: #ffffff;
-  padding: 0 4rem;
+  padding: 0.6rem 4.9rem; /* need this padding to set same width */
+  border-radius: 0.6rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
-.button-login input {
-  background-color: aliceblue;
+.button-btn :hover {
+  background-color: #fff;
+  color: #353535;
 }
+
+/* Not showing image on mobile */
+
+  .draw,
+  .draw-1,
+  .draw-2,
+  .draw-3 {
+    display:none;
+  }
+/* --------------------------------- */
 /* Page-Index end here --------------*/
 
-/* Page-Record start here */
-.button-logout a {
-  text-decoration: none;
-  color: #353535;
-  background-color: aqua;
-  padding: 1rem;
+/* Page-Singup & Login start here ------------*/
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: #dad870;
 }
 
+.button2 {
+  background-color: #ff5c4d;
+  color: #fff;
+  padding: 0.5rem 4.9rem; /* need this padding to set same width */
+  border: none;
+  border-radius: 0.6rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+/* Page-Singup & Login end here --------------*/
+
+/* Page-Record start here --------------------*/
+.header-box {
+  margin: 3rem
+}
 .tooltip1{
   position: relative;
   cursor: pointer;
@@ -250,11 +219,22 @@ h6 {
   top: -10px;
   left: 30px;
 }
-/* Page-Record end here --------------*/
+/* Page-Record end here ------------------------*/
 
 /* Page-Create start here */
+
+.button3 {
+  background-color: #ff5c4d;
+  color: #fff;
+  padding: 0.5rem 4.6rem; /* need this padding to set same width */
+  border: none;
+  border-radius: 0.6rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
 article {
-  background-color: rgba(255, 255, 255, 0.523);
+  background-color: #ffffff85;
   text-align: start;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -262,61 +242,144 @@ article {
 /* Page-Create end here --------------*/
 
 /* Page-update start here */
-.update-container {
-  display: flex;
-  flex-direction: column;
-}
+
 /* Page-update end here --------------*/
 
-
 /* Tablet layout start --------------------------------*/
-@media only screen 
-and (min-width: 511px) 
-and (max-width: 960px) {
-  /* .product-menu {
-    display: flex;
-    overflow-x: unset;
+@media screen and (max-width: 1068px) and (min-width: 768px) {
+  
+  .draw,
+  .draw-1,
+  .draw-2,
+  .draw-3 {
+    display:flex;
+    justify-content: center;
+    padding: 1rem;
   }
 
-  .product-menu>div {
-    display: flex;
-    justify-content: space-around;
+  .draw img {
     width: 100%;
   }
 
-  .product-list {
-    margin: 0.5rem 1rem 1rem 1rem;
+  .draw-1 img {
+    width: 500px;
+    margin: 4rem;
   }
-  .product-card {
-    width: 30%;
-  }*/
-} 
 
-/* Desktop layout start -------------------------------*/
-@media only screen and (min-width: 961px) {
-  /* Tool thips */
+  .draw-2 img {
+    width: 500px;
+    margin: 4rem 4rem 8rem 4rem;
+  }
 
-  
-  /* FOOTER */
+  .draw-3 img {
+    width: 300px;
+  }
+
+  .page-footer {
+    padding: 1rem 1rem 0 1rem;
+  }
+
   .footer-column-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  .column-1 {
+    order: 3;
+    padding-right: 1rem;
+  }
+
+  .column-2 {
     text-align: start;
-    }
+    padding-left: 1rem;
+  }
 
-    .footer-column-container a:hover {
-      color: #dad870;
-    }
+  .column-3 ul {
+    padding-right: 4rem;
+  }
 
-    .column-1 {
-    text-align: end;
-    }
-
-    .column-1,
-    .column-2 {
-      margin-bottom: 0;
-      width: 25%;
-    }
+  .column-3 a {
+    padding: 0 0 0 1rem;
+  }
+  .footer-copyright {
+    text-align: center;
+  }
 }
-/* FOOTER end -----------------------------------------*/
+
+@media screen and (min-width: 1069px) {
+  .draw,
+  .draw-1,
+  .draw-2,
+  .draw-3 {
+    display:flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .draw img {
+    width: 100%;
+  }
+
+  .draw-1 img {
+    width: 500px;
+    margin: 4rem;
+  }
+
+  .draw-2 img {
+    width: 500px;
+    margin: 4rem 4rem 8rem 4rem;
+  }
+
+  .draw-3 img {
+    width: 300px;
+  }
+
+  .page-footer {
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  .footer-column-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  .column-1 {
+    order: 3;
+    padding-right: 1rem;
+  }
+
+  .column-2 {
+    text-align: start;
+    padding-left: 1rem;
+  }
+
+  .column-3 ul {
+    padding-right: 4rem;
+  }
+
+  .column-3 a {
+    font-size: 1.8rem;
+    padding: 0 0 0 1rem;
+  }
+  .footer-copyright {
+    text-align: center;
+  }
+  .footer-column p:hover,
+  .footer-column a:hover {
+    color: #dad870;
+  }
+}
+
+
+
+  
+
+
