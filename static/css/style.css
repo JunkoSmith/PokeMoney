@@ -54,9 +54,17 @@ h4 {
 h6 {
   font-size: 1rem; /*16px*/
 }
-/* .header-section1 {
-  margin: 3rem;
-} */
+
+.nav-logout {
+  text-decoration: none;
+  color: #353535;
+  font-weight:700;
+  padding: 1rem;
+ }
+
+.nav-btn a:hover {
+  color: #fff;
+ }
 
 /* Base-FOOTER start -----------------------------------------*/
 .page-footer {

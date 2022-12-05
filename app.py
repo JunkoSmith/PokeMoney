@@ -1,14 +1,22 @@
+#from imp import init_builtin
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 from flask_login import UserMixin, LoginManager, login_user, logout_user, login_required
+from datetime import datetime
 from flask_bootstrap import Bootstrap
 from werkzeug.security import generate_password_hash, check_password_hash
-
 import os
 
+
+def test_index_page(client):
+   response = client.get('/')
+
+   assert response.status_code == 200
+   assert b'Welcome!' in response.data
+
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = os.urandom(24)
 db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
@@ -17,22 +25,25 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 class Post(db.Model):
-  id = db.Column(db.Integer, primary_key=True)
-  title = db.Column(db.String(5), nullable=False)
-  body = db.Column(db.String(300), nullable=False) #note
-  created_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
+  id = db.Column(db.Integer,primary_key=True)
+  title = db.Column(db.String(5),nullable=False)
+  body = db.Column(db.String(300),nullable=False) #note
+  created_at = db.Column(db.DateTime,nullable=False,default=datetime.now())
 
 class User(UserMixin, db.Model):
-  id = db.Column(db.Integer, primary_key=True)
-  username = db.Column(db.String(50), nullable=False, unique=True)
-  password = db.Column(db.String(25), )
-    
+  id = db.Column(db.Integer,primary_key=True)
+  username = db.Column(db.String(50),nullable=False,unique=True)
+  password = db.Column(db.String(25),nullable=False)
+
+
+
 @login_manager.user_loader
 def load_uder(user_id):
     return User.query.get(int(user_id))
 
+
 @app.route('/', methods=['GET', 'POST'])
-def home():
+def index():
     return render_template('index.html')
 
 @app.route('/signup', methods=['GET', 'POST']) #signup change to "/"
@@ -117,6 +128,5 @@ def delete(id):
     db.session.commit()
     return redirect(url_for("create"))
    
-
-with app.app_context():
-    db.create_all()
+if __name__ == ('__main__'):
+  app.run(debug=True, host='0.0.0.0', port=5050)

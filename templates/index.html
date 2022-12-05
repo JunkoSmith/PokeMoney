@@ -4,8 +4,9 @@
 {% block header %}
   <div class="header-box">
     <h3>Hl! </h3>
-    <h3>This app will provide you to get manage how to record your pokket money. </h3>
-    <h3>If you are interested in please create your account.</h3>
+    <h3>Do you sometimes find it difficult to keep track of how much pocket money you have? This App is an easy and fun way for you to manage your pocket money.</h3>
+    <h3>If you are interested, you can create an account below.</h3>
+    <h5>  </h5>
   </div>
 {% endblock %}
 
@@ -16,12 +17,12 @@
     
     <p>Create your account now!</p>
     <div class="button-btn">
-      <a class="button" href="/signup" role="button">Signup Now</a>
+      <a class="button" href="{{url_for('signup')}}" role="button">Signup Now</a>
     </div>
   
     <p>Already have an account?</p>  
     <div class="button-btn">
-      <a class="button1" href="/login" role="button">Login</a>
+      <a class="button1" href="{{url_for('login')}}" role="button">Login</a>
     </div>
     
   </div>
@@ -30,6 +31,6 @@
 
 {% block footer %}
   <div class="draw" >
-    <img src="../static/images/Olivia_draw04.png" alt="">
+    <img src="../static/images/Olivia_draw04.png" alt="My ginger cat Sora is surfing: created by Olivia (age8)">
   </div>
 {% endblock %}
