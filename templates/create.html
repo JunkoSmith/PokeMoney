@@ -21,7 +21,7 @@
           </li>
         </ul>
         <div class="nav-btn">
-          <a class="nav-logout" href="/login">Logout</a>
+          <a class="nav-logout" href="{{url_for('login')}}">Logout</a>
         </div>
       </div>
     </div>
@@ -34,8 +34,8 @@
 
 {% block content %}
 <div class="homepage">
-  <main class="form-signin" style="width: 20rem;">
-  <h1>My pocket money records</h1>
+  <main class="form-signin">
+  <h1 class="fw-bold">My pocket money records</h1>
     <div class="button-btn">
       <a class="button" href="/record" role="button">Add new record</a>
     </div>
@@ -45,21 +45,23 @@
       {% for post in posts %}
         <article>
           <div class="article-box">
+            <p>Date: {{post.create}}</p>
+          </div>
+          <div class="article-box">
             <p>Amount:</p>
             <h2>£ {{post.title}}</h2>
           </div>
           <div>
             <p>Note:</p>
-            <p>{{post.body}}</p>
+            <p>{{post.detail}}</p>
           </div>
           <div>
             <p>Saved at:{{post.created_at}}</p>
           </div>
           <div class="button-btn">
             <a class="button3" href="/{{post.id}}/update" role="button">Change</a>
-          </div>
-          <div class="button-btn">
-            <a class="button1" href="/{{post.id}}/delete" role="button">Delete</a>
+          
+            <a class="button4" href="/{{post.id}}/delete" role="button">Delete</a>
           </div>
         </article>
       {% endfor%}

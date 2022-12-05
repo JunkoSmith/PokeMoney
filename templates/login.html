@@ -12,21 +12,23 @@
 {% block content %}
   <div class="homepage">
     <div class="form-signin" style="width: 20rem;">
-      <h1>Please Login</h1>
+      <h1 class="fw-bold">Please Login</h1>
         <form action="" method="POST">
-
+          {{ form.hidden_tag() }}
+          
           <div class="form-floating">
-            <input type="text" class="form-control" id="floatingPassword" placeholder="username" name="username">
+            <input type="text" class="form-control" id="floatingPassword" placeholder="username" name="username" required>
             <label for="username">Username</label>
           </div>
 
           <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
             <label for="floatingPassword">Password</label>
+            
           </div>
 
           <div class="button-btn">
-            <input class="button2" type="submit" value="Login">
+            <input class="button2" type="submit" value="Login" name="submit">
           </div>
             
           <div class="button-btn">

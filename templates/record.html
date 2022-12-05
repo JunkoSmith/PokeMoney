@@ -21,7 +21,7 @@
           </li>
         </ul>
         <div class="nav-btn">
-          <a class="nav-logout" href="/login">Logout</a>
+          <a class="nav-logout" href="{{url_for('login')}}">Logout</a>
         </div>
       </div>
     </div>
@@ -34,14 +34,18 @@
 
 {% block content %}
   <div class="homepage">
-    <main class="form-signin" style="width: 20rem;">
+    <main class="form-signin" style="max-width: 35rem;">
 
-    <h1>Add your pocket money</h1>
+    <h1 class="fw-bold">Add your pocket money</h1>
 
       <form action="" method="POST" >
         <div class="form-container">
           <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInputValue" placeholder="e.g. £1 £2 £5 £10" name="title"><!-- get title -->
+            <input type="date" class="form-control" id="floatingInputValue" name="create" required><!-- get create -->
+            <label for="floatingInputValue">Input the date you got</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInputValue" placeholder="e.g. £1 £2 £5 £10" name="title" required><!-- get title -->
             <label for="floatingInputValue">Input the amount you got</label>
           </div>
                         
@@ -51,7 +55,7 @@
           </div>
     
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" type="text" name="body"></textarea><!-- get body -->
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" type="text" name="detail"></textarea><!-- get detail -->
             <label for="floatingTextarea2">Description</label>
           </div>
         </div>

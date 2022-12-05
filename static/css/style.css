@@ -119,13 +119,13 @@ h6 {
 }
 
 .button-btn {
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 
 .button-btn a {
   text-decoration: none;
 }
-
+/* "signup now" buttton */
 .button {
   background-color: #353535;
   color: #fff;
@@ -134,6 +134,7 @@ h6 {
   margin: 0 auto;
   margin-bottom: 1rem;
 }
+/* "login" "back" "delete"buttton */
 .button1 {
   background-color: #353535;
   color: #fff;
@@ -168,7 +169,7 @@ h6 {
   margin: 0 auto;
   background-color: #dad870;
 }
-
+/* "join" "login" "save" button */
 .button2 {
   background-color: #ff5c4d;
   color: #fff;
@@ -182,6 +183,10 @@ h6 {
 /* Page-Singup & Login end here --------------*/
 
 /* Page-Record start here --------------------*/
+.form-container {
+  width: 330px;
+  margin: auto;
+}
 .header-box {
   margin: 3rem
 }
@@ -230,13 +235,24 @@ h6 {
 /* Page-Record end here ------------------------*/
 
 /* Page-Create start here */
-
+/* "change" button */
 .button3 {
   background-color: #ff5c4d;
   color: #fff;
-  padding: 0.5rem 4.6rem; /* need this padding to set same width */
+  padding: 0.5rem 1.7rem; /* need this padding to set same width */
   border: none;
   border-radius: 0.6rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.button4 {
+  background-color: #fff;
+  color: #ff5c4d;
+  padding: 0.4rem 2rem; /* need this padding to set same width */
+  border-radius: 0.6rem;
+  border: 2px solid;
   margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
@@ -245,7 +261,7 @@ article {
   background-color: #ffffff85;
   text-align: start;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin: 1.2rem;
 }
 /* Page-Create end here --------------*/
 
@@ -319,6 +335,15 @@ article {
 }
 
 @media screen and (min-width: 1069px) {
+  .homepage {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 4rem 0;
+    background-color: #dad870;
+  }
   .draw,
   .draw-1,
   .draw-2,

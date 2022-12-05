@@ -21,7 +21,7 @@
           </li>
         </ul>
         <div class="nav-btn">
-          <a class="nav-logout" href="/login">Logout</a>
+          <a class="nav-logout" href="{{url_for('login')}}">Logout</a>
         </div>
       </div>
     </div>
@@ -35,18 +35,22 @@
 
 {% block content %}
   <div class="homepage">
-    <main class="form-signin" style="width: 20rem;">
+    <main class="form-signin">
 
-    <h1>Edit your record</h1>
+    <h1 class="fw-bold">Edit your record</h1>
 
       <form action="" method="POST">
         <div class="form-container">
+          <div class="form-floating">
+            <input type="date" name="create" value="{{post.create.date()}}" class="form-control" required>
+            <label for="create">Change the date?</label>
+          </div>
           <div class="form-floating">
             <input type="text" name="title" value="{{post.title}}" class="form-control">
             <label for="title">Change the amount?</label>
           </div>
           <div class="form-floating">
-            <input type="text" name="body" id="" value="{{post.body}}" class="form-control">
+            <input type="text" name="detail" id="" value="{{post.detail}}" class="form-control">
             <label for="boby">Change Discripthion?</label>
           </div>
         </div>

@@ -13,21 +13,22 @@
     <main class="form-signin" style="width: 20rem;">
     
 
-      <h1>Create a<br>New Account</h1>
+      <h1 class="fw-bold">Create a<br>New Account</h1>
         <form action="" method="POST">
-
+          {{ form.hidden_tag() }}
+          
           <div class="form-floating">
-            <input type="text" class="form-control" name="username" id="floatingPassword" placeholder="username" >
+            <input type="text" class="form-control" name="username" id="floatingPassword" placeholder="Username" required>
             <label for="username">Username</label>
           </div>
 
           <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
             <label for="password">Password</label>
           </div>
           
           <div class="button-btn">
-            <input class="button2" type="submit" value="Join">
+            <input class="button2" type="submit" value="Join" name="submit">
           </div>
 
           <div class="button-btn">
