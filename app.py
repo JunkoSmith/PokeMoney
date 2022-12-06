@@ -1,4 +1,3 @@
-#from imp import init_builtin
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, LoginManager, login_user, logout_user, login_required, current_user
@@ -68,12 +67,10 @@ class LoginForm(FlaskForm):
     submit = SubmitField("Login")          
 
 
-
-
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -88,18 +85,6 @@ def signup():
 
     return render_template('signup.html', form=form)
 
-    # if request.method == "POST":
-    #   username = request.form.get('username')
-    #   password = request.form.get('password')
-
-    #   user = User(username=username, password=generate_password_hash(password, method='sha256'))
-
-    #   db.session.add(user)
-    #   db.session.commit()
-    #   return redirect(url_for("login"))
-
-    # else:
-    #   return render_template('signup.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -113,18 +98,6 @@ def login():
 
     return render_template('login.html', form=form)
 
-
-    if request.method == "POST":
-      username = request.form.get('username')
-      password = request.form.get('password')
-
-      user = User.query.filter_by(username=username).first()
-      if check_password_hash(user.password, password):
-        login_user(user)
-        return redirect(url_for("record"))
-      
-    else:
-      return render_template('login.html')
 
 @app.route('/record', methods=['GET', 'POST'])
 @login_required
@@ -145,6 +118,7 @@ def record(): #dash bord
     else:
       return render_template('record.html')
 
+
 @app.route('/create', methods=['GET', 'POST']) #get=access to the web page
 @login_required
 def create():
@@ -158,6 +132,7 @@ def create():
 def logout():
     logout_user()
     return redirect(url_for("login"))
+
 
 @app.route('/<int:id>/update', methods=['GET', 'POST'])
 @login_required
@@ -187,4 +162,4 @@ def delete(id):
     
 # after Flask 2.3   
 if __name__ == ('__main__'):
-  app.run(debug=True, host='0.0.0.0', port=5050)
+  app.run()
