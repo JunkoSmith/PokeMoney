@@ -4,18 +4,15 @@
 {% block header %}
   <div class="header-box">
     <h3>Thank you for choosing our app! Please create your account below.</h3>
-    <h3></h3>
   </div>
 {% endblock %}
 
 {% block content %}
   <div class="homepage">
     <main class="form-signin" style="width: 20rem;">
-    
 
       <h1 class="fw-bold">Create a<br>New Account</h1>
         <form action="" method="POST">
-          {{ form.hidden_tag() }}
           
           <div class="form-floating">
             <input type="text" class="form-control" name="username" id="floatingPassword" placeholder="Username" required>
