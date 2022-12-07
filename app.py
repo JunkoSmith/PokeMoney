@@ -4,6 +4,7 @@ from datetime import datetime
 from flask_login import UserMixin, LoginManager, login_user, logout_user, login_required
 from flask_bootstrap import Bootstrap
 
+
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 
@@ -65,7 +66,7 @@ def login():
         return redirect(url_for("record"))
         
     else:
-      return render_template('login.html')
+        return render_template('login.html')
 
 
 @app.route('/record', methods=['GET', 'POST'])
